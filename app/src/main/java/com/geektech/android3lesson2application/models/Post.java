@@ -2,7 +2,9 @@ package com.geektech.android3lesson2application.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
 
     int id;
     @SerializedName("user")
@@ -16,6 +18,10 @@ public class Post {
         this.groupId = groupId;
         this.title = title;
         this.content = content;
+    }
+
+    public Post(int userId){
+        this.userId = userId;
     }
 
     public int getId() {
@@ -68,4 +74,6 @@ public class Post {
                 ", content='" + content + '\'' +
                 '}';
     }
+
+
 }
